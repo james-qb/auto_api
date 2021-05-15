@@ -31,7 +31,7 @@ public class GetDemo extends TestBase {
     public void getAPITest() throws IOException {
         restClient = new RestClient();
         restClient.get(url);
-        HashMap<String, String> hashMap = new HashMap<String, String>();
+        HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("Content-Type", "application/json");
         closeableHttpResponse = restClient.get(url, hashMap);
         //断言状态码
