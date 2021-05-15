@@ -9,7 +9,7 @@ public class JsonUtil {
      *  @param jpath,这个jpath指的是用户想要查询json对象的值的路径写法
      *  jpath写法举例：1) per_page  2)data[1]/first_name ，data是一个json数组，[1]表示索引
      *  /first_name 表示data数组下某一个元素下的json对象的名称为first_name
-     *  @return，返回first_name这个json对象名称对应的值
+     *  return，返回first_name这个json对象名称对应的值
      */
     //json解析方法
     public static String getValueByJPath(JSONObject responseJson,String jpath){
