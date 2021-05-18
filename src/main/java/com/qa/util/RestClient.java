@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RestClient {
+
     //1.Get请求方法
     public CloseableHttpResponse get(String url) throws IOException {
         //创建一个可以关闭的HttpClient对象
