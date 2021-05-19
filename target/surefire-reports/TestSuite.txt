@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.801 sec - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.949 sec <<< FAILURE! - in TestSuite
+getAPITest(GetDemo)  Time elapsed: 0.14 sec  <<< FAILURE!
+java.lang.ExceptionInInitializerError: null
+	at com.qa.util.RestClient.<clinit>(RestClient.java:21)
+	at GetDemo.getAPITest(GetDemo.java:32)
+

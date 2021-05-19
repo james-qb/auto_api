@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="0.089" tests="1" errors="0" skipped="0" failures="0">
+<testsuite name="TestSuite" time="0.14" tests="1" errors="0" skipped="0" failures="1">
   <properties>
     <property name="idea.version" value="2020.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -30,7 +30,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.3.3\plugins\maven\lib\maven-event-listener.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.3.3\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="GBK"/>
-    <property name="java.library.path" value="C:\Java\jdk1.8.0_211\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;%OPENSSL_HOME%\bin;C:\windows\System32\OpenSSH\;C:\Java\jdk1.8.0_211\bin;C:\Java\jdk1.8.0_211\jre\bin;C:\Python36;C:\Python36\Scripts;C:\Program Files\mysql-5.7.26-winx64\bin;C:\apache-maven-3.6.1\bin;C:\apache-ant-1.10.6\bin;C:\Program Files\Git\cmd;C:\apache-jmeter-5.2.1\bin;D:\android-sdk-windows\platform-tools;D:\android-sdk-windows\tools;C:\Program Files\OpenVPN\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\Users\admin\AppData\Local\Microsoft\WindowsApps;C:\Users\admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Fiddler;C:\Users\admin\AppData\Roaming\npm;C:\Program Files\OpenSSL-Win64\bin;;."/>
+    <property name="java.library.path" value="C:\Java\jdk1.8.0_211\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\NetSarang\Xshell 6\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\OpenSSL-Win64\bin;C:\windows\System32\OpenSSH\;C:\Java\jdk1.8.0_211\bin;C:\Java\jdk1.8.0_211\jre\bin;C:\Python36;C:\Python36\Scripts;C:\Program Files\mysql-5.7.26-winx64\bin;C:\apache-maven-3.6.1\bin;C:\apache-ant-1.10.6\bin;C:\Program Files\Git\cmd;C:\apache-jmeter-5.2.1\bin;D:\android-sdk-windows\platform-tools;D:\android-sdk-windows\tools;C:\Program Files\OpenVPN\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\Users\admin\AppData\Local\Microsoft\WindowsApps;C:\Users\admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Fiddler;C:\Users\admin\AppData\Roaming\npm;C:\Program Files\OpenSSL-Win64\bin;;."/>
     <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.3.3\plugins\maven\lib\maven3/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
@@ -63,5 +63,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testDemo" classname="TestDemo" time="0.089"/>
+  <testcase name="getAPITest" classname="GetDemo" time="0.14">
+    <failure type="java.lang.ExceptionInInitializerError:"><![CDATA[java.lang.ExceptionInInitializerError: null
+	at com.qa.util.RestClient.<clinit>(RestClient.java:21)
+	at GetDemo.getAPITest(GetDemo.java:32)
+]]></failure>
+  </testcase>
 </testsuite>
