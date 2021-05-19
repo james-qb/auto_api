@@ -1,4 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.801 sec - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.363 sec <<< FAILURE! - in TestSuite
+getAPITest(GetDemo)  Time elapsed: 0.095 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: org/apache/log4j/Logger
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at com.qa.util.RestClient.<clinit>(RestClient.java:20)
+	at GetDemo.getAPITest(GetDemo.java:32)
+

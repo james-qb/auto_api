@@ -8,16 +8,17 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RestClient {
-    final static Logger Log = Logger.getLogger(RestClient.class);
+    final static Logger Log = LoggerFactory.getLogger(RestClient.class);
 
     /**
      * 不带请求头的get方法封装
@@ -33,6 +34,7 @@ public class RestClient {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         //创建一个HttpGet的请求对象
         HttpGet httpget = new HttpGet(url);
+        Log.info("开始请求");
         //执行请求,相当于postman上的发送按钮,然后赋值给HttpResponse对象接收
         return httpClient.execute(httpget);
     }
