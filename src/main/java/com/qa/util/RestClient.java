@@ -18,7 +18,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RestClient {
-    final static Logger Log = LoggerFactory.getLogger(RestClient.class);
+    //final static Logger Log = LoggerFactory.getLogger(RestClient.class);
+    final Logger Log = LoggerFactory.getLogger(this.getClass());
 
     /**
      * 不带请求头的get方法封装

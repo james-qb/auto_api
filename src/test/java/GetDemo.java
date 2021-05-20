@@ -22,7 +22,8 @@ public class GetDemo extends TestBase {
     RestClient restClient;
     CloseableHttpResponse closeableHttpResponse;
 
-    final static Logger Log = LoggerFactory.getLogger(GetDemo.class);
+    //final static Logger Log = LoggerFactory.getLogger(GetDemo.class);
+    final Logger Log = LoggerFactory.getLogger(this.getClass());
 
     @BeforeClass
     public void setup() {
