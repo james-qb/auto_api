@@ -31,12 +31,13 @@ public class RestClient {
 
     public CloseableHttpResponse get(String url) throws ClientProtocolException, IOException {
         //创建一个可以关闭的HttpClient对象
-        CloseableHttpClient httpClient = HttpClients.createDefault();
+        CloseableHttpClient httpclient = HttpClients.createDefault();
         //创建一个HttpGet的请求对象
         HttpGet httpget = new HttpGet(url);
-        Log.info("开始请求");
-        //执行请求,相当于postman上的发送按钮,然后赋值给HttpResponse对象接收
-        return httpClient.execute(httpget);
+        Log.info("开始发送get请求...");
+        CloseableHttpResponse httpResponse = httpclient.execute(httpget);
+        Log.info("发送请求成功！开始得到响应对象。");
+        return httpResponse;
     }
 
     /**
@@ -58,7 +59,9 @@ public class RestClient {
             httpget.addHeader(entry.getKey(), entry.getValue());
         }
         //执行请求,相当于postman上点击发送按钮,然后赋值给HttpResonse对象接收
-        return httpclient.execute(httpget);
+        CloseableHttpResponse httpResponse = httpclient.execute(httpget);
+        Log.info("开始发送带请求头的get请求...");
+        return httpResponse;
     }
 
     /**
