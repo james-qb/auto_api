@@ -8,9 +8,9 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
@@ -18,8 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RestClient {
-    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(RestClient.class);
-    //final static Logger Log = Logger.getLogger(RestClient.class);
+    final static Logger Log = LoggerFactory.getLogger(RestClient.class);
 
     /**
      * 不带请求头的get方法封装
@@ -35,11 +34,9 @@ public class RestClient {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         //创建一个HttpGet的请求对象
         HttpGet httpget = new HttpGet(url);
-        //执行请求,相当于postman上点击发送按钮，然后赋值给HttpResponse对象接收
-        LOGGER.info("开始发送get请求...");
-        CloseableHttpResponse httpResponse = httpClient.execute(httpget);
-        LOGGER.info("发送请求成功！开始得到响应对象。");
-        return httpResponse;
+        Log.info("开始请求");
+        //执行请求,相当于postman上的发送按钮,然后赋值给HttpResponse对象接收
+        return httpClient.execute(httpget);
     }
 
     /**
@@ -61,9 +58,7 @@ public class RestClient {
             httpget.addHeader(entry.getKey(), entry.getValue());
         }
         //执行请求,相当于postman上点击发送按钮,然后赋值给HttpResonse对象接收
-        CloseableHttpResponse httpResponse = httpclient.execute(httpget);
-        LOGGER.info("开始发送带请求头的get请求...");
-        return httpResponse;
+        return httpclient.execute(httpget);
     }
 
     /**
@@ -90,7 +85,7 @@ public class RestClient {
         }
         //发送post请求
         CloseableHttpResponse httpResponse = httpclient.execute(httppost);
-        LOGGER.info("开始发送post请求");
+        Log.info("开始发送post请求");
         return httpResponse;
     }
 
@@ -143,7 +138,7 @@ public class RestClient {
     public int getStatusCode(CloseableHttpResponse response) {
 
         int statusCode = response.getStatusLine().getStatusCode();
-        LOGGER.info("解析，得到响应状态码:" + statusCode);
+        Log.info("解析，得到响应状态码:" + statusCode);
         return statusCode;
 
     }
@@ -156,10 +151,10 @@ public class RestClient {
      * @throws IOException，抛出IOException异常
      */
     public JSONObject getResponseJson(CloseableHttpResponse response) throws ParseException, IOException {
-        LOGGER.info("得到响应对象的String格式");
+        Log.info("得到响应对象的String格式");
         String responseString = EntityUtils.toString(response.getEntity(), "UTF-8");
         JSONObject responseJson = JSON.parseObject(responseString);
-        LOGGER.info("返回响应内容的JSON格式");
+        Log.info("返回响应内容的JSON格式");
         return responseJson;
     }
 }
